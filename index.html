@@ -42,16 +42,76 @@
                 </button>
             </div>
 
-            <!-- Tarjeta de Excel (Lista para el futuro) -->
+            <!-- Tarjeta de Excel (Desplaza suavemente hacia la sección de Excel) -->
             <div class="habilidad" id="tarjeta-excel">
-                <button class="boton-habilidad">
-                    Excel
-                    <span>+</span>
-                </button>
+                <a href="#seccion-excel" class="boton-habilidad boton-enlace">
+                    Excel & Power Pivot (DAX)
+                    <span>↓</span>
+                </a>
             </div>
         </section>
 
     </main>
+
+    <!-- ==========================================================================
+       NUEVA SECCIÓN: DASHBOARD EXCEL E-COMMERCE (TARJETA BLANCA SOBRE FONDO CELESTE)
+       ========================================================================== -->
+    <section id="seccion-excel" class="contenedor-excel">
+        <div class="tarjeta-excel-detalle">
+            
+            <div class="excel-header">
+                <h2>Dashboard de Análisis E-Commerce U.S. (2019–2025)</h2>
+                <p class="subtitulo-excel">Análisis masivo de datos con Excel, Power Pivot & Métricas DAX</p>
+            </div>
+
+            <div class="excel-grid-contenido">
+                
+                <!-- Columna Izquierda: Video Demostrativo -->
+                <div class="excel-video-columna">
+                    <div class="video-wrapper">
+                        <video controls preload="metadata" poster="images/3D RENDER FINAL.png">
+                            <source src="images/vid.mp4" type="video/mp4">
+                            Tu navegador no soporta la reproducción de video HTML5.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Explicación Técnica y Hallazgos -->
+                <div class="excel-texto-columna">
+                    <h3>Análisis y Hallazgos Clave</h3>
+                    <p>
+                        Proyecto enfocado en la ingeniería de datos y visualización interactiva a partir del procesamiento de <strong>1 millón de registros</strong> transaccionales de comercio electrónico en Estados Unidos durante el período 2019 a 2025.
+                    </p>
+
+                    <div class="puntos-clave">
+                        <ul>
+                            <li><strong>Modelo de Datos Relacional:</strong> Optimización e integración de múltiples tablas mediante el motor xVelocity de Power Pivot.</li>
+                            <li><strong>Cálculos Avanzados en DAX:</strong> Creación de medidas implícitas y explícitas para determinar KPIs de ventas netas, margen de ganancia, crecimiento interanual (YoY) y comportamiento de compra.</li>
+                            <li><strong>Segmentación y Dinamismo:</strong> Implementación de segmentadores de datos interconectados (*Slicers*) y gráficos dinámicos sincronizados para un análisis exploratorio en tiempo real.</li>
+                        </ul>
+                    </div>
+
+                    <p style="margin-top: 15px;">
+                        Este dashboard permite a la toma de decisiones identificar patrones de consumo regionales, categorías de mayor margen operativo y estacionalidad de demanda año con año.
+                    </p>
+
+                    <!-- Botón de Descarga del Archivo -->
+                    <div class="contenedor-boton-descarga">
+                        <a href="https://drive.google.com/file/d/1cABCNpUJa_EbQuhx1i2YNoRMizvuVpCp/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-descargar-excel">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Descargar Dataset / Dashboard en Drive
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
 
     <footer>
         <p>© 2026 Miranda CV | Mi Portafolio</p>
@@ -138,4 +198,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
