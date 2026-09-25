@@ -88,19 +88,28 @@ document.addEventListener("DOMContentLoaded", function () {
     /* ==========================================================================
        4. NAVEGACIÓN Y DESPLAZAMIENTO SUAVE A EXCEL
        ========================================================================== */
+/* ==========================================================================
+       4. NAVEGACIÓN Y DESPLAZAMIENTO SUAVE A EXCEL (CON COMPENSACIÓN DE BARRA)
+       ========================================================================== */
     const btnExcel = document.getElementById("btnExcel");
     const seccionExcel = document.getElementById("seccion-excel");
 
     if (btnExcel && seccionExcel) {
         btnExcel.addEventListener("click", function (e) {
             e.preventDefault();
-            seccionExcel.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
+            
+            // Altura de la barra blanca fija + margen deseado
+            const alturaBarraFija = 100; 
+            
+            const posicionElemento = seccionExcel.getBoundingClientRect().top + window.pageYOffset;
+            const posicionFinal = posicionElemento - alturaBarraFija;
+
+            window.scrollTo({
+                top: posicionFinal,
+                behavior: "smooth"
             });
         });
     }
-
     /* ==========================================================================
        5. ATTACH TECLA ESCAPE PARA CERRAR MODALES
        ========================================================================== */
