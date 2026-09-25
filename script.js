@@ -6,17 +6,14 @@ const modalFoto = document.getElementById('modal-foto');
 const botonCerrarModal = document.querySelector('.cerrar-modal');
 
 if (fotoPerfil && modalFoto && botonCerrarModal) {
-    // Al hacer clic en tu foto, mostramos el modal interactivo
     fotoPerfil.addEventListener('click', () => {
         modalFoto.classList.add('mostrar');
     });
 
-    // Al hacer clic en la "X", ocultamos el modal
     botonCerrarModal.addEventListener('click', () => {
         modalFoto.classList.remove('mostrar');
     });
 
-    // Si el reclutador hace clic en el fondo oscuro exterior, también se cierra
     modalFoto.addEventListener('click', (e) => {
         if (e.target === modalFoto) {
             modalFoto.classList.remove('mostrar');
@@ -32,22 +29,18 @@ const modalAutoCAD = document.getElementById('modal-autocad');
 const cerrarAutoCAD = document.querySelector('.cerrar-proyecto');
 
 if (tarjetaAutoCAD && modalAutoCAD && cerrarAutoCAD) {
-    // Capturamos el botón que está dentro de la tarjeta de AutoCAD
     const botonAutoCAD = tarjetaAutoCAD.querySelector('.boton-habilidad');
 
     if (botonAutoCAD) {
-        // Abrir cuadro blanco de proyecto al hacer clic
         botonAutoCAD.addEventListener('click', (e) => {
             e.preventDefault();
             modalAutoCAD.classList.add('mostrar');
         });
 
-        // Cerrar con la X en la esquina superior derecha
         cerrarAutoCAD.addEventListener('click', () => {
             modalAutoCAD.classList.remove('mostrar');
         });
 
-        // Cerrar haciendo clic afuera en el fondo oscuro
         modalAutoCAD.addEventListener('click', (e) => {
             if (e.target === modalAutoCAD) {
                 modalAutoCAD.classList.remove('mostrar');
@@ -65,14 +58,11 @@ const contenidosPestana = document.querySelectorAll('.tab-content');
 if (botonesPestana.length > 0 && contenidosPestana.length > 0) {
     botonesPestana.forEach(boton => {
         boton.addEventListener('click', () => {
-            // Quitar la clase activa de todos los botones y contenidos de pestañas
             botonesPestana.forEach(b => b.classList.remove('active'));
             contenidosPestana.forEach(c => c.classList.remove('active'));
 
-            // Activar el botón seleccionado
             boton.classList.add('active');
 
-            // Activar el bloque de contenido correspondiente mediante su ID único
             const idContenido = boton.getAttribute('data-tab');
             const contenidoActivo = document.getElementById(idContenido);
             if (contenidoActivo) {
@@ -81,4 +71,3 @@ if (botonesPestana.length > 0 && contenidosPestana.length > 0) {
         });
     });
 }
-
