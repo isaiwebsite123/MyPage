@@ -8,6 +8,7 @@
 </head>
 <body>
 
+    <!-- BARRA SUPERIOR (HEADER FIJO) -->
     <header class="barra-superior">
         <div class="header-contenido">
             <h1>Mi Portafolio</h1>
@@ -15,11 +16,12 @@
         </div>
     </header>
 
+    <!-- CONTENEDOR PRINCIPAL: PERFIL Y HABILIDADES -->
     <main class="contenedor">
 
         <section class="perfil">
             <!-- Al hacer clic aquí, se activará la ventana emergente de tu foto -->
-            <img src="images/yo.png" alt="Fotografía" class="foto">
+            <img src="images/yo.png" alt="Fotografía" class="foto" id="fotoPerfil">
 
             <h2>Hola, soy Isaí</h2>
 
@@ -36,7 +38,7 @@
 
             <!-- Tarjeta de AutoCAD (Abre el cuadro flotante del proyecto) -->
             <div class="habilidad" id="tarjeta-autocad">
-                <button class="boton-habilidad">
+                <button class="boton-habilidad" id="btnAutoCAD">
                     AutoCAD
                     <span>+</span>
                 </button>
@@ -44,7 +46,7 @@
 
             <!-- Tarjeta de Excel (Desplaza suavemente hacia la sección de Excel) -->
             <div class="habilidad" id="tarjeta-excel">
-                <a href="#seccion-excel" class="boton-habilidad boton-enlace">
+                <a href="#seccion-excel" class="boton-habilidad boton-enlace" id="btnExcel">
                     Excel & Power Pivot (DAX)
                     <span>↓</span>
                 </a>
@@ -54,7 +56,7 @@
     </main>
 
     <!-- ==========================================================================
-       NUEVA SECCIÓN: DASHBOARD EXCEL E-COMMERCE (TARJETA BLANCA SOBRE FONDO CELESTE)
+       SECCIÓN: DASHBOARD EXCEL E-COMMERCE (TARJETA BLANCA SOBRE FONDO CELESTE)
        ========================================================================== -->
     <section id="seccion-excel" class="contenedor-excel">
         <div class="tarjeta-excel-detalle">
@@ -113,6 +115,7 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <p>© 2026 Miranda CV | Mi Portafolio</p>
     </footer>
@@ -122,15 +125,15 @@
        ========================================================================== -->
 
     <!-- 1. MODAL PARA AMPLIAR TU FOTO DE PERFIL -->
-    <div id="modal-foto" class="modal">
-        <span class="cerrar-modal">&times;</span>
-        <img class="contenido-modal" src="images/yo.png" alt="Foto ampliada">
+    <div id="modalFoto" class="modal">
+        <span class="cerrar-modal" id="cerrarFoto">&times;</span>
+        <img class="contenido-modal" id="fotoAmpliada" src="images/yo.png" alt="Foto ampliada">
     </div>
 
     <!-- 2. MODAL AVANZADO BLANCO CON PESTAÑAS PARA TU PROYECTO DE AUTOCAD -->
-    <div id="modal-autocad" class="modal-proyecto">
+    <div id="modalAutoCAD" class="modal-proyecto">
         <div class="contenido-proyecto">
-            <span class="cerrar-proyecto">&times;</span>
+            <span class="cerrar-proyecto" id="cerrarAutoCAD">&times;</span>
             
             <h2>Proyecto: Mueble Independiente Residencial</h2>
             <p class="subtitulo-proyecto">Modelado 3D y Planimetría Avanzada – Un homenaje con propósito</p>
@@ -192,6 +195,13 @@
                     Desde la perspectiva técnica de la Ingeniería Industrial, se ejecutó el modelado completo de la estructura y la simulación de iluminación interna. Asimismo, se generaron las láminas normadas en formato A3 con acotado de precisión de todos sus componentes funcionales —incluyendo cajoneras y puertas batientes— junto a sus respectivas vistas diédricas (planta, alzado, perfil) y detalles de cortes transversales para su correcta interpretación técnica y espacial. Además, de implementar las reglas ISO 5457 - ISO 7200.
                 </p>
             </div>
+        </div>
+    </div>
+
+    <!-- ENLACE A JS -->
+    <script src="script.js"></script>
+</body>
+</html>
         </div>
     </div>
 
