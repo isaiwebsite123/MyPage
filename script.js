@@ -85,11 +85,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    /* ==========================================================================
-       4. NAVEGACIÓN Y DESPLAZAMIENTO SUAVE A EXCEL
-       ========================================================================== */
 /* ==========================================================================
-       4. NAVEGACIÓN Y DESPLAZAMIENTO SUAVE A EXCEL (CON COMPENSACIÓN DE BARRA)
+       4. NAVEGACIÓN Y DESPLAZAMIENTO SUAVE A EXCEL (DESFASE AMPLIADO)
        ========================================================================== */
     const btnExcel = document.getElementById("btnExcel");
     const seccionExcel = document.getElementById("seccion-excel");
@@ -98,11 +95,12 @@ document.addEventListener("DOMContentLoaded", function () {
         btnExcel.addEventListener("click", function (e) {
             e.preventDefault();
             
-            // Altura de la barra blanca fija + margen deseado
-            const alturaBarraFija = 100; 
+            // Aumentamos a 150px para dejar espacio limpio entre el header y el título
+            const compensacionHeader = 150; 
             
-            const posicionElemento = seccionExcel.getBoundingClientRect().top + window.pageYOffset;
-            const posicionFinal = posicionElemento - alturaBarraFija;
+            // Calculamos la posición real del elemento en la página
+            const posicionElemento = seccionExcel.getBoundingClientRect().top + window.scrollY;
+            const posicionFinal = posicionElemento - compensacionHeader;
 
             window.scrollTo({
                 top: posicionFinal,
