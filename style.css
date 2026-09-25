@@ -159,7 +159,7 @@ body {
 
 .boton-enlace {
     text-decoration: none;
-    box-sizing: border-radius;
+    box-sizing: border-box;
 }
 
 /* ==========================================================================
@@ -170,11 +170,9 @@ body {
     max-width: 1100px;
     margin: 100px auto 80px auto; 
     padding: 0 30px;
-    
-    /* ESTA LÍNEA ES LA CLAVE: */
-    /* Define un margen invisible de 100px arriba para que la barra fija no tape el título */
     scroll-margin-top: 100px; 
 }
+
 .tarjeta-excel-detalle {
     background-color: #ffffff;
     border-radius: 12px;
@@ -209,24 +207,28 @@ body {
     align-items: start;
 }
 
-/* Video */
+/* Video (YouTube / Iframe Adaptable) */
 .excel-video-columna {
     width: 100%;
 }
 
 .video-wrapper {
-    width: 100%;
-    border-radius: 8px;
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
     overflow: hidden;
+    border-radius: 8px;
     background-color: #000000;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-.video-wrapper video {
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    display: block;
-    max-height: 400px;
-    object-fit: contain;
+    height: 100%;
+    border: 0;
 }
 
 /* Columna de Texto */
@@ -642,6 +644,11 @@ footer {
         flex-direction: column;
         gap: 15px;
     }
+
+    .pdf-box iframe {
+        height: 300px;
+    }
+}
 
     .pdf-box iframe {
         height: 300px;
